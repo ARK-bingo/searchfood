@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">寻觅</string>
+    <string name="title_activity_index">MainActivity</string>
+    <string name="message">消息</string>
+    <string name="friends">通讯录</string>
+    <string name="news">朋友圈</string>
+    <string name="mine">我的</string>
+    <string name="deleteFriend">删除好友</string>
+    <string name="delete">删除</string>
+    <string name="addFriend">添加朋友</string>
+    <string name="help">帮助与反馈</string>
+    <string name="endTime">endtime</string>
+    <string name="beginTime">begintime</string>
+</resources>
