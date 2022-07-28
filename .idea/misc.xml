@@ -11,8 +11,10 @@
         <entry key="..\:/AndroidStudioProjects/WeChating-master/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.2734375" />
         <entry key="..\:/AndroidStudioProjects/WeChating-master/app/src/main/res/drawable/inputbackground.xml" value="0.2734375" />
         <entry key="..\:/AndroidStudioProjects/WeChating-master/app/src/main/res/drawable/rounded_edittext.xml" value="0.2734375" />
+        <entry key="..\:/AndroidStudioProjects/WeChating-master/app/src/main/res/drawable/tab_ic_orders.xml" value="0.13055555555555556" />
         <entry key="..\:/AndroidStudioProjects/WeChating-master/app/src/main/res/layout/2.xml" value="0.26621847886098404" />
         <entry key="..\:/AndroidStudioProjects/WeChating-master/app/src/main/res/layout/AndroidManifest(1).xml" value="0.25729166666666664" />
+        <entry key="..\:/AndroidStudioProjects/WeChating-master/app/src/main/res/layout/activity_feedback.xml" value="0.26621847886098404" />
         <entry key="..\:/AndroidStudioProjects/WeChating-master/app/src/main/res/layout/activity_index.xml" value="0.25729166666666664" />
         <entry key="..\:/AndroidStudioProjects/WeChating-master/app/src/main/res/layout/activity_main.xml" value="0.26621847886098404" />
         <entry key="..\:/AndroidStudioProjects/WeChating-master/app/src/main/res/layout/activity_main2.xml" value="0.25729166666666664" />
@@ -26,6 +28,7 @@
         <entry key="..\:/AndroidStudioProjects/WeChating-master/app/src/main/res/layout/fragment_news.xml" value="0.4033613316075515" />
         <entry key="..\:/AndroidStudioProjects/WeChating-master/app/src/main/res/layout/friends_item.xml" value="0.20168066580377575" />
         <entry key="..\:/AndroidStudioProjects/WeChating-master/app/src/main/res/layout/item.xml" value="0.25729166666666664" />
+        <entry key="..\:/AndroidStudioProjects/WeChating-master/app/src/main/res/layout/locationset.xml" value="0.4033613316075515" />
         <entry key="..\:/AndroidStudioProjects/WeChating-master/app/src/main/res/layout/login.xml" value="0.25729166666666664" />
         <entry key="..\:/AndroidStudioProjects/WeChating-master/app/src/main/res/layout/main.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/WeChating-master/app/src/main/res/layout/make_moment_page.xml" value="0.26621847886098404" />
@@ -33,6 +36,7 @@
         <entry key="..\:/AndroidStudioProjects/WeChating-master/app/src/main/res/layout/msg_item.xml" value="0.25729166666666664" />
         <entry key="..\:/AndroidStudioProjects/WeChating-master/app/src/main/res/layout/music.xml" value="0.25729166666666664" />
         <entry key="..\:/AndroidStudioProjects/WeChating-master/app/src/main/res/layout/news_item.xml" value="0.26621847886098404" />
+        <entry key="..\:/AndroidStudioProjects/WeChating-master/app/src/main/res/layout/personinformation.xml" value="0.26621847886098404" />
         <entry key="..\:/AndroidStudioProjects/WeChating-master/app/src/main/res/layout/regist.xml" value="0.25729166666666664" />
         <entry key="..\:/AndroidStudioProjects/WeChating-master/app/src/main/res/layout/title_name.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/WeChating-master/app/src/main/res/menu/popumenu.xml" value="0.25729166666666664" />

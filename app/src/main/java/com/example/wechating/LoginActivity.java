@@ -21,7 +21,6 @@ public class LoginActivity extends AppCompatActivity {
     private Button loginbtn;
     private EditText usernameText;
     private EditText passwordText;
-    private EditText emailText;
     private TextView errorTip;
 
     @Override
@@ -39,8 +38,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String username=usernameText.getText().toString();
                 String password=passwordText.getText().toString();
-                String email=emailText.getText().toString();
-                User user=new User(username,password,email);
+                User user=new User(username,password,"");
                 Boolean res=UserUtil.login(user);
                 if(!res)//用户名或密码错误
                     errorTip.setText("用户名或密码错误,请检查");
