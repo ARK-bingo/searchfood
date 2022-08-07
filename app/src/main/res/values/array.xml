@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--本页面为首页home_page中下拉框的值列表-->
+<!--author  YaoRunBin-->
+<resources>
+    <string-array name="location">
+        <item>潮安区</item>
+        <item>湘桥区</item>
+        <item>饶平区</item>
+        <item>枫溪区</item>
+    </string-array>
+</resources>
