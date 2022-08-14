@@ -1,19 +1,93 @@
 package com.example.wechating;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.wechating.component.LoopViewAdapter;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+//定义选项卡内卡片中承载的数据的类
+class TestData {
+    public int imageId;
+    public String text;
+
+    public TestData(int imageId, String text) {
+        this.imageId = imageId;
+        this.text = text;
+    }
+}
+
+//自定义一个适配器来进行创建itemView以及绑定数据
+class TestRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements View.OnClickListener {
+    List<TestData> list;
+
+    public TestRecyclerAdapter(HomePage homePage, List<TestData> dataList) {
+        this.list = dataList;
+    }
+
+    @Override
+    public void onClick(View view) {
+        int position = view.getVerticalScrollbarPosition();
+        TestData testData = list.get(position);
+        Toast.makeText(view.getContext(), "you click item"+ position, Toast.LENGTH_SHORT).show();
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder{
+        public ImageView imageView;
+        public TextView textView;
+        Context context;
+        public ViewHolder(Context context, View view) {
+            super(view);
+            imageView = view.findViewById(R.id.imageview1);
+            textView = view.findViewById(R.id.textview1);
+            this.context = context;
+        }
+    }
+
+    @NonNull
+    @Override
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.home_page_item, parent, false);
+        ViewHolder viewHolder = new ViewHolder(parent.getContext(), view);
+        viewHolder.itemView.setOnClickListener(this);
+        viewHolder.imageView.setOnClickListener(this);
+        return viewHolder;
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+        onBindViewHolder(holder, position);
+    }
+
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        TestData testData = list.get(position);
+        holder.imageView.setImageResource(testData.imageId);
+        holder.textView.setText(testData.text);
+    }
+
+    @Override
+    public int getItemCount() {
+        return list.size();
+    }
+}
 
 public class HomePage extends AppCompatActivity {
     private Spinner spinner;    //定义一个下拉列表
@@ -29,6 +103,13 @@ public class HomePage extends AppCompatActivity {
     private TextView loop_dec;
     private int previousSelectedPosition = 0;
     boolean isRunning = false;
+
+    //recyclerView: 首页中选项卡页面的变量
+    private RecyclerView homepage_recyclerView;
+    private RecyclerView.Adapter homepage_adapter;
+    private GridLayoutManager homepage_layoutManager;
+    List<TestData> testList = new LinkedList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,9 +127,22 @@ public class HomePage extends AppCompatActivity {
         //将adapter设置为spinner的适配器
         spinner.setAdapter(adapter);
 
-
+        //recyclerView的初始化及配置
+        initTestData(); //初始化测试数据
+        homepage_recyclerView = (RecyclerView) findViewById(R.id.recyclerview1);
+        //设置固定大小
+        homepage_recyclerView.setHasFixedSize(true);
+        //创建线性布局
+        homepage_layoutManager = new GridLayoutManager(this, 2);
+        homepage_layoutManager.setOrientation(RecyclerView.VERTICAL);
+        //给recyclerView设置布局管理器
+        homepage_recyclerView.setLayoutManager(homepage_layoutManager);
+        //创建并设置适配器
+        homepage_adapter = new TestRecyclerAdapter(this, testList);
+        homepage_recyclerView.setAdapter(homepage_adapter);
     }
 
+    //轮播图片区域设置
     private void initLoopView() {
         viewPager = (ViewPager)findViewById(R.id.loopviewpager);
         ll_dots_container = (LinearLayout)findViewById(R.id.ll_dots_loop);
@@ -156,4 +250,21 @@ public class HomePage extends AppCompatActivity {
             }
         }.start();
     }
+
+    //初始化测试数据
+    private void initTestData() {
+        for (int i = 0; i < 25; i++) {
+            testList.add(new TestData(R.drawable.home_icon0, "item"+i));
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
